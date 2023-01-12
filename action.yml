@@ -1,0 +1,37 @@
+name: 'Ingest Log To Splunk Action'
+description: 'Download the Workflow logs and ingest to Splunk'
+inputs:
+  org:
+    description: 'Organization Name'
+    required: true
+  repo:
+    description: 'Repository Name'
+    required: true  
+  runId:
+    description: 'Workflow Run ID'
+    required: true  
+  workflowName:
+    description: 'Workflow Name'
+    required: true
+  workflowPath:
+    description: 'Workflow Path'
+    required: true
+  headBranch:
+    description: 'Head Branch'
+    required: true
+  conclusion:
+    description: 'Workflow Run Final Status'
+    required: true
+  gitToken:
+    description: 'GitHub Token'
+    required: true
+  splunkUrl:
+    description: 'Splunk URL'
+    required: true 
+  splunkHEC:
+    description: 'Splunk URL HEC Token'
+    required: true 
+runs:
+  using: 'node16'
+  main: 'dist/index.js'
+
