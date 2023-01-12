@@ -6,8 +6,7 @@ const unzipper = require("unzipper");
 const os = require("os")
 
 
-
-/*const org = core.getInput('org');
+const org = core.getInput('org');
 const repo = core.getInput('repo');
 const runId = core.getInput('runId');
 const workflowName = core.getInput('workflowName');
@@ -17,18 +16,18 @@ const conclusion = core.getInput('conclusion');
 const gitToken = core.getInput('gitToken');
 const splunkUrl = core.getInput('splunkUrl');
 const splunkHEC = core.getInput('splunkHEC');
-*/
 
-const org = 'Yog4Prog'
+
+/*const org = 'Yog4Prog'
 const repo = 'GatesApproval'
 const runId = '3673120369'
 const workflowName = 'SampleWorkflow';
 const workflowPath = '.github/workflows/sample.yml';
 const headBranch = 'main';
 const conclusion = 'success';
-const gitToken = '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'
+const gitToken = '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'
 const splunkUrl = 'https://localhost:8088'
-const splunkHEC = 'd58f28c7-2e9b-4270-aefd-455cd886f4aa'
+const splunkHEC = 'd58f28c7-2e9b-4270-aefd-455cd886f4aa'*/
 
 async function grabLogsAndUpload() {
 
