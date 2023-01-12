@@ -44568,7 +44568,7 @@ async function grabLogsAndUpload() {
             'Content-Type': 'application/zip',
             'Accept': 'application/vnd.github.v3+json'
         },
-        //responseType: 'stream'
+        responseType: 'stream'
     };
 
     // Delete logs if already downloaded 
