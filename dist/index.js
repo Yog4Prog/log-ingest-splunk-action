@@ -44544,8 +44544,7 @@ const unzipper = __nccwpck_require__(2334);
 const os = __nccwpck_require__(2037)
 
 
-
-/*const org = core.getInput('org');
+const org = core.getInput('org');
 const repo = core.getInput('repo');
 const runId = core.getInput('runId');
 const workflowName = core.getInput('workflowName');
@@ -44555,20 +44554,12 @@ const conclusion = core.getInput('conclusion');
 const gitToken = core.getInput('gitToken');
 const splunkUrl = core.getInput('splunkUrl');
 const splunkHEC = core.getInput('splunkHEC');
-*/
 
-const org = 'Yog4Prog'
-const repo = 'GatesApproval'
-const runId = '3673120369'
-const workflowName = 'SampleWorkflow';
-const workflowPath = '.github/workflows/sample.yml';
-const headBranch = 'main';
-const conclusion = 'success';
-const gitToken = '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'
-const splunkUrl = 'https://localhost:8088'
-const splunkHEC = 'd58f28c7-2e9b-4270-aefd-455cd886f4aa'
 
 async function grabLogsAndUpload() {
+
+    console.log("Downloading logs with following details.. ")
+    console.log(`https://api.github.com/repos/${org}/${repo}/actions/runs/${runId}/logs`);
 
     var downloadLogRequest = {
         method: 'get',
