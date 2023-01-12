@@ -1,9 +1,6 @@
 name: 'Ingest Log To Splunk Action'
 description: 'Download the Workflow logs and ingest to Splunk'
 inputs:
-  org:
-    description: 'Organization Name'
-    required: true
   repo:
     description: 'Repository Name'
     required: true  

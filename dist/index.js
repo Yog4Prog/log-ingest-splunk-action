@@ -44544,7 +44544,6 @@ const unzipper = __nccwpck_require__(2334);
 const os = __nccwpck_require__(2037)
 
 
-const org = core.getInput('org');
 const repo = core.getInput('repo');
 const runId = core.getInput('runId');
 const workflowName = core.getInput('workflowName');
@@ -44559,11 +44558,11 @@ const splunkHEC = core.getInput('splunkHEC');
 async function grabLogsAndUpload() {
 
     console.log("Downloading logs with following details.. ")
-    console.log(`https://api.github.com/repos/${org}/${repo}/actions/runs/${runId}/logs`);
+    console.log(`https://api.github.com/repos/${repo}/actions/runs/${runId}/logs`);
 
     var downloadLogRequest = {
         method: 'get',
-        url: `https://api.github.com/repos/${org}/${repo}/actions/runs/${runId}/logs`,
+        url: `https://api.github.com/repos/${repo}/actions/runs/${runId}/logs`,
         headers: {
             'Authorization': `Bearer ${gitToken}`,
             'Content-Type': 'application/zip',
@@ -44637,7 +44636,7 @@ async function uploadLogsToSplunkAsText() {
             workflow
         },
         metadata: {
-            source: `${org}/${repo}`,
+            source: `${repo}`,
             sourcetype: "github:git:actions:txt",
             index: "main",
             host: `${os.hostname}`,
@@ -44705,7 +44704,7 @@ async function uploadLogsToSplunkAsEvent() {
             events
         },
         metadata: {
-            source: `${org}/${repo}`,
+            source: `${repo}`,
             sourcetype: "github:git:actions:json",
             index: "main",
             host: `${os.hostname}`
